@@ -1,2 +1,3 @@
 import ERestApiMethod from './ERestApiMethod';
-export {ERestApiMethod};
+import EPage from 'src/enum/EPage';
+export {ERestApiMethod, EPage};

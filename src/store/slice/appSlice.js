@@ -1,7 +1,9 @@
 import {createSlice} from '@reduxjs/toolkit';
+import {EPage} from 'src/enum';
 
 const initialState = {
   user: null,
+  view: EPage.MAIN,
 };
 
 const appSlice = createSlice({
@@ -11,8 +13,10 @@ const appSlice = createSlice({
     setUser: (state, action) => {
       state.user = action.payload;
     },
+    setView: (state, action) => {
+      state.view = action.payload;
+    },
   },
 });
 
-export const appReducer = appSlice.reducer;
-export const {setUser} = appSlice.actions;
+export default appSlice;

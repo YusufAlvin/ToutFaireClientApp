@@ -1,6 +1,6 @@
 import {configureStore} from '@reduxjs/toolkit';
-import {appReducer} from './slice/appSlice';
 import {createLogger} from 'redux-logger';
+import {appSlice} from 'src/store/slice';
 
 const reduxLogger = createLogger({
   collapsed: true,
@@ -12,7 +12,7 @@ const reduxLogger = createLogger({
 
 const store = configureStore({
   reducer: {
-    appReducer,
+    appReducer: appSlice.reducer,
   },
   middleware: (getDefultMiddleware) => {
     return getDefultMiddleware().concat([reduxLogger]);
